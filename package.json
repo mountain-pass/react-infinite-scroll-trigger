@@ -24,11 +24,11 @@
     "deploy": "gh-pages -d example/build",
     "prettier": "./node_modules/.bin/prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "pretty-quick": "./node_modules/.bin/pretty-quick --staged",
-    "precommit": "npm run pretty-quick"
+    "precommit": "yarn run pretty-quick"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit"
+      "pre-commit": "yarn run precommit"
     }
   },
   "peerDependencies": {

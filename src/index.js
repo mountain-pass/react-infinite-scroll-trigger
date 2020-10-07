@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useInView } from 'react-intersection-observer'
 
-const delayMs = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+const delayPromise = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const DEFAULT_LOADING = () => <i>Loading...</i>
 const DEFAULT_NOMOREDATA = () => <i>No more data.</i>
@@ -20,6 +20,7 @@ const InfiniteScrollTrigger = ({
   renderLoading: RenderLoading = DEFAULT_LOADING,
   renderNoMoreData: RenderNoMoreData = DEFAULT_NOMOREDATA,
   inViewConfig = {},
+  reloadDelayMs = 100,
   ...props
 }) => {
   // watch for when the div becomes visible.
@@ -32,14 +33,12 @@ const InfiniteScrollTrigger = ({
 
   // used for updating the rendered content.
   const [noMoreData, setNoMoreData] = React.useState(false)
-  const [isLoading, setIsLoading] = React.useState(false)
 
   // continuously loads data, while all conditions are met.
   const loadMoreRef = React.useRef(async () => {
     if (isVisibleRef.current && hasMoreRef.current && !isLoadingRef.current) {
       console.debug('InfiniteScrollTrigger - loading...')
       isLoadingRef.current = true
-      setIsLoading(true)
       try {
         hasMoreRef.current = await loadMore()
       } catch (err) {
@@ -48,9 +47,8 @@ const InfiniteScrollTrigger = ({
       }
       if (!hasMoreRef.current) setNoMoreData(true)
       isLoadingRef.current = false
-      setIsLoading(false)
       // give results a chance to render, then check is we still need to load more data...
-      delayMs(200).then(loadMoreRef.current)
+      delayPromise(reloadDelayMs).then(loadMoreRef.current)
     } else {
       console.debug('InfiniteScrollTrigger - no more loading.', {
         isVisibleRef: isVisibleRef.current,
@@ -72,7 +70,7 @@ const InfiniteScrollTrigger = ({
       <div ref={ref} {...props} />
 
       {/* show loading ? */}
-      {RenderLoading && isLoading && <RenderLoading />}
+      {RenderLoading && !noMoreData && <RenderLoading />}
 
       {/* show 'no more data' ? */}
       {RenderNoMoreData && noMoreData && <RenderNoMoreData />}
