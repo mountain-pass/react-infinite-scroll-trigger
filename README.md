@@ -19,8 +19,8 @@ import InfiniteScrollTrigger from 'react-infinite-scroll-trigger'
 const App = () => {
   const [data, setData] = React.useState([])
 
-  const loadMore = () =>
-    apiAsyncLoadData((data, hasMore) => {
+  const loadMoreAsync = () =>
+    apiAsyncLoadData((data = [], hasMore = true) => {
       setData((ps) => [...ps, ...data])
       return hasMore
     })
