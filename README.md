@@ -2,13 +2,19 @@
 
 > A visibility based trigger for loading more data.
 
-[![NPM](https://img.shields.io/npm/v/react-infinite-scroll-trigger.svg)](https://www.npmjs.com/package/react-infinite-scroll-trigger) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![GitHub license](https://img.shields.io/github/license/mountain-pass/addressr)](https://github.com/mountain-pass/addressr/blob/master/LICENSE)
+[![NPM](https://img.shields.io/npm/v/@mountainpass/react-infinite-scroll-trigger.svg)](https://www.npmjs.com/package/@mountainpass/react-infinite-scroll-trigger)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
 npm install --save react-infinite-scroll-trigger
 ```
+
+## Example
+
+Please check the [Homepage](https://mountain-pass.github.io/react-infinite-scroll-trigger/).
 
 ## Usage
 
