@@ -1,10 +1,35 @@
 {
-  "name": "react-infinite-scroll-trigger",
+  "name": "@mountainpass/react-infinite-scroll-trigger",
   "version": "1.0.0",
   "description": "A visibility based trigger for loading more data.",
-  "author": "nickgrealy",
-  "license": "MIT",
-  "repository": "mountain-pass/react-infinite-scroll-trigger",
+  "author": "Mountain Pass <info@mountain-pass.com.au>",
+  "contributors": [
+    "Nick Grealy <nickgrealy@gmail.com>",
+    "Nick Grealy <nick@mountain-pass.com.au>"
+  ],
+  "keywords": [
+    "react",
+    "reactjs",
+    "infinity",
+    "infinite",
+    "scroll",
+    "scroller",
+    "visibility",
+    "intersection",
+    "observer",
+    "list",
+    "loader"
+  ],
+  "license": "Apache-2.0",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mountain-pass/react-infinite-scroll-trigger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mountain-pass/react-infinite-scroll-trigger/issues"
+  },
+  "homepage": "https://mountain-pass.github.io/react-infinite-scroll-trigger/",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -22,6 +47,7 @@
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
+    "publish": "npm publish --access public",
     "prettier": "./node_modules/.bin/prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "pretty-quick": "./node_modules/.bin/pretty-quick --staged",
     "precommit": "yarn run pretty-quick"
