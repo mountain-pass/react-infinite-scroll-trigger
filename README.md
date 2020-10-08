@@ -26,16 +26,16 @@ const App = () => {
     })
 
   return (
-    <>
+    <div>
       {data.map((d) => (
         <div key={d}>{d}</div>
       ))}
       <InfiniteScrollTrigger loadMore={loadMoreAsync} />
-    </>
+    </div>
   )
 }
 ```
 
 ## License
 
-MIT © [nickgrealy](https://github.com/nickgrealy)
+Apache 2.0 © [nickgrealy](https://github.com/nickgrealy)
