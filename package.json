@@ -46,7 +46,7 @@
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "version-bump": "npm version patch && git push && git push --tags",
-    "build:site": "cd example && yarn install && yarn run build",
+    "build:site": "yarn install && cd example && yarn install && yarn run build",
     "publish:site": "npm run build:site && gh-pages -d ./build",
     "publish:npm": "npm publish --access public",
     "prettier": "./node_modules/.bin/prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
