@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import InfiniteScrollTrigger from './index'
 
 describe('ExampleComponent', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(InfiniteScrollTrigger).toBeTruthy()
   })
 })
