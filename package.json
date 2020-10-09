@@ -103,5 +103,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "react-intersection-observer": "8.29.0"
+  }
 }
