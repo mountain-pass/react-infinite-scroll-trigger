@@ -1,6 +1,7 @@
+// @ts-ignore
 import InfiniteScrollTrigger from './index'
 
-describe('ExampleComponent', () => {
+describe('InfiniteScrollTrigger', () => {
   it('is truthy', () => {
     expect(InfiniteScrollTrigger).toBeTruthy()
   })
