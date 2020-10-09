@@ -14,7 +14,7 @@ This library provides a React component, which synchronously, continuously calls
 - the `loadMore` function returns `true`
 - the component is not already loading data
 
-The component uses an [IntersectionObserver](https://www.w3.org/TR/intersection-observer/), to watch/trigger when it's visiblity changes.
+The component uses an [IntersectionObserver](https://www.w3.org/TR/intersection-observer/) to respond to visiblity changes.
 
 ## Example
 
@@ -27,6 +27,16 @@ npm install --save react-infinite-scroll-trigger
 ```
 
 ## Usage
+
+### The bare minimum
+
+```jsx
+import InfiniteScrollTrigger from 'react-infinite-scroll-trigger'
+...
+<InfiniteScrollTrigger loadMore={yourAsyncFunction} />
+```
+
+### With some pseudo code
 
 ```jsx
 import React from 'react'
@@ -51,6 +61,10 @@ const App = () => {
   )
 }
 ```
+
+### Full exmaple
+
+See the [example's code](example/src/App.js).
 
 ## Configuration
 
