@@ -45,6 +45,7 @@
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
+    "publish": "npm run publish:site && npm run publish:npm",
     "prepublish:site": "cd example && yarn install && yarn run build",
     "publish:site": "gh-pages -d example/build",
     "prepublish:npm": "npm version patch && git push && git push --tags",
