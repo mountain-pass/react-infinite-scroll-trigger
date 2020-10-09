@@ -6,15 +6,25 @@
 [![NPM](https://img.shields.io/npm/v/@mountainpass/react-infinite-scroll-trigger.svg)](https://www.npmjs.com/package/@mountainpass/react-infinite-scroll-trigger)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Behaviour
+
+This library provides a React component, which synchronously, continuously calls the `loadMore` function, while:
+
+- the component is visible
+- the `loadMore` function returns `true`
+- the component is not already loading data
+
+The component uses an [IntersectionObserver](https://www.w3.org/TR/intersection-observer/), to watch/trigger when it's visiblity changes.
+
+## Example
+
+Please see the [Homepage](https://mountain-pass.github.io/react-infinite-scroll-trigger/).
+
 ## Install
 
 ```bash
 npm install --save react-infinite-scroll-trigger
 ```
-
-## Example
-
-Please check the [Homepage](https://mountain-pass.github.io/react-infinite-scroll-trigger/).
 
 ## Usage
 
@@ -41,6 +51,16 @@ const App = () => {
   )
 }
 ```
+
+## Configuration
+
+| Type     | Attribute        | Cardinality | Default                          | Description                                                                                                                                           |
+| -------- | ---------------- | ----------- | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| function | loadMore         | required    | -                                | An async function whose Promise resolves to a truthy value. `true` indicates there's more data to load, while `false` indicates no more data to load. |
+| function | renderLoading    | optional    | () => &lt;i>Loading...&lt;/i>    | The component to display, when loading data.                                                                                                          |
+| function | renderNoMoreData | optional    | () => &lt;i>No more data.&lt;/i> | The component to display, when there is no more data to load.                                                                                         |
+| object   | inViewConfig     | optional    | {}                               | Configuration for the 'react-intersection-observer'.                                                                                                  |
+| number   | reloadDelayMs    | optional    | 200                              | How long to wait to allow React to re-render components (which affects visibility), before re-checking whether to load more data.                     |
 
 ## License
 

@@ -10,10 +10,11 @@ const DEFAULT_NOMOREDATA = () => <i>No more data.</i>
 /**
  * A visibility based trigger for loading more data.
  *
- * @param {object} props Component props
  * @param {function} props.loadMore An async function whose Promise resolves to a truthy value. `true` indicates there's more data to load, while `false` indicates no more data to load.
  * @param {function} props.renderLoading The component to display, when loading data.
  * @param {function} props.renderNoMoreData The component to display, when there is no more data to load.
+ * @param {object} props.inViewConfig Configuration for the 'react-intersection-observer'.
+ * @param {number} props.reloadDelayMs How long to wait to allow React to re-render components (which affects visibility), before re-checking whether to load more data.
  */
 const InfiniteScrollTrigger = ({
   loadMore,
@@ -79,9 +80,16 @@ const InfiniteScrollTrigger = ({
 }
 
 InfiniteScrollTrigger.propTypes = {
+  /** An async function whose Promise resolves to a truthy value. `true` indicates there's more data to load, while `false` indicates no more data to load. */
   loadMore: PropTypes.func.isRequired,
+  /** The component to display, when loading data. */
   renderLoading: PropTypes.func,
-  renderNoMoreData: PropTypes.func
+  /** The component to display, when there is no more data to load. */
+  renderNoMoreData: PropTypes.func,
+  /** Configuration for the 'react-intersection-observer'. */
+  inViewConfig: PropTypes.object,
+  /** How long to wait to allow React to re-render components (which affects visibility), before re-checking whether to load more data. */
+  reloadDelayMs: PropTypes.number
 }
 
 export default InfiniteScrollTrigger
