@@ -62,6 +62,12 @@ const App = () => {
 | object   | inViewConfig     | optional    | {}                               | Configuration for the 'react-intersection-observer'.                                                                                                  |
 | number   | reloadDelayMs    | optional    | 200                              | How long to wait to allow React to re-render components (which affects visibility), before re-checking whether to load more data.                     |
 
+## Tips
+
+1. You can play with CSS styling to resize and reposition the trigger area.
+   - E.g. to start loading data 100px before the end of a list of elements (when vertically scrolling down)
+     > `<InfiniteScrollTrigger style={{ height: '100px', marginTop: '-100px' }} ... />`
+
 ## License
 
 Apache 2.0 © [nickgrealy](https://github.com/nickgrealy)
