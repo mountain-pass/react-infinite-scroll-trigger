@@ -27,7 +27,7 @@ const App = () => {
   return (
     <React.Fragment>
       <h1>Records loaded = {data.length}</h1>
-      <div style={{ border: '1px solid red', height: '500px', overflow: 'auto' }}>
+      <div style={{ border: '1px solid magenta', height: '400px', overflow: 'auto' }}>
         {data.map((d) => (
           <div key={d} style={{ border: '1px solid blue', height: '50px' }}>
             {d}
@@ -35,7 +35,7 @@ const App = () => {
         ))}
         <InfiniteScrollTrigger
           loadMore={loadMore}
-          style={{ height: '100px', marginTop: '-100px', background: 'rgba(0,255,0,0.2)' }}
+          style={{ height: '130px', marginTop: '-130px', background: 'rgba(0,255,0,0.2)' }}
         />
       </div>
     </React.Fragment>
