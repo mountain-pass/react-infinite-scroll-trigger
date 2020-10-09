@@ -62,9 +62,9 @@ const App = () => {
 }
 ```
 
-### Full exmaple
+### Full example
 
-See the [example's code](example/src/App.js).
+See the [example code](example/src/App.js).
 
 ## Configuration
 
