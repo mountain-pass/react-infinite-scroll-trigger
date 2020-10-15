@@ -38,7 +38,7 @@
   },
   "scripts": {
     "build": "run-s build:npm build:site",
-    "build:npm": "microbundle-crl --no-compress --format modern,cjs",
+    "build:npm": "microbundle-crl --format modern,cjs",
     "build:site": "cd example && yarn install && yarn run build",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
