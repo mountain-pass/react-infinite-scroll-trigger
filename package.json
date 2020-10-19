@@ -63,7 +63,7 @@
   },
   "peerDependencies": {
     "react": "16.14.0",
-    "react-intersection-observer": "8.29.0"
+    "react-intersection-observer": "8.29.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -105,6 +105,6 @@
     "dist"
   ],
   "dependencies": {
-    "react-intersection-observer": "8.29.0"
+    "react-intersection-observer": "8.29.1"
   }
 }
