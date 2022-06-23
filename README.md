@@ -23,7 +23,7 @@ Please see the [Homepage](https://mountain-pass.github.io/react-infinite-scroll-
 ## Install
 
 ```bash
-npm install --save react-infinite-scroll-trigger
+npm install --save @mountainpass/react-infinite-scroll-trigger
 ```
 
 ## Usage
