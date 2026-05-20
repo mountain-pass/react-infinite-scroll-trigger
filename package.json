@@ -1,6 +1,6 @@
 {
   "name": "@mountainpass/react-infinite-scroll-trigger",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "A visibility based trigger for loading more data.",
   "author": "Mountain Pass <info@mountain-pass.com.au>",
   "contributors": [
