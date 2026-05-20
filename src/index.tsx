@@ -1,40 +1,33 @@
 import React from 'react'
-// @ts-ignore
 import { useInView } from 'react-intersection-observer'
 
 const delayPromise = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-const DEFAULT_LOADING = () => <i>Loading...</i>
-const DEFAULT_NOMOREDATA = () => <i>No more data.</i>
+const DEFAULT_LOADING: React.ComponentType = () => <i>Loading...</i>
+const DEFAULT_NOMOREDATA: React.ComponentType = () => <i>No more data.</i>
 
 interface Props {
   /**
    * An async function whose Promise resolves to a truthy value. `true` indicates there's more data to load, while `false` indicates no more data to load.
    */
-  loadMore: Function
+  loadMore: () => Promise<boolean>
   /**
    * The component to display, when loading data.
    */
-  renderLoading: Function
+  renderLoading?: React.ComponentType
   /**
    * The component to display, when there is no more data to load.
    */
-  renderNoMoreData: Function
+  renderNoMoreData?: React.ComponentType
   /**
    * Configuration for the 'react-intersection-observer'.
    */
-  inViewConfig: object
+  inViewConfig?: object
   /**
    * How long to wait to allow React to re-render components (which affects visibility), before re-checking whether to load more data.
    */
-  reloadDelayMs: number
+  reloadDelayMs?: number
 }
-
-// const ExampleComponent = ({ text }: Props) => {
-//   return <div>Example Component: {text}</div>
-// }
-
-// export default ExampleComponent
 
 /**
  * @preserve
@@ -73,7 +66,7 @@ const InfiniteScrollTrigger = ({
       try {
         hasMoreRef.current = await loadMore()
       } catch (err) {
-        console.error(`InfiniteScrollTrigger caught error - ${err.message}`)
+        console.error(`InfiniteScrollTrigger caught error - ${err instanceof Error ? err.message : err}`)
         hasMoreRef.current = false
       }
       if (!hasMoreRef.current) setNoMoreData(true)
